@@ -56,8 +56,13 @@ p {
   width: 40%;
   align-items: center;
   padding-top: 4em;
+  margin-left: 14em;
   background-color: lightskyblue;
   border: white solid 4em;
+}
+
+#today h2 {
+  padding-bottom: 1em;
 }
 
 #fiveday {
@@ -67,10 +72,10 @@ p {
 }
 
 #fiveday div {
-  padding: 7em;
+  padding: 3em;
   margin: 2em;
   background-color: lightblue;
-  text-align: initial;
+  text-align: left;
 }
 
 #fiveday div h4 {
