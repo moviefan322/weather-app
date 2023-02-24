@@ -11,14 +11,39 @@ var tomEl = document.querySelector("#tom");
 var fiveDayEl = document.querySelector("#fiveday");
 var searchButEl = document.querySelector("#searchBut");
 var searchInputEl = document.querySelector("#search");
+var todIconEl = document.querySelector("#todIcon");
+var tomIconEl = document.querySelector("#tomIcon");
+var tomTwoIconEl = document.querySelector("#tomTwoIcon");
+var tomThreeIconEl = document.querySelector("#tomThreeIcon");
+var tomFourIconEl = document.querySelector("#tomFourIcon");
+var tomFiveIconEl = document.querySelector("#tomFiveIcon");
+var histOneEl = document.querySelector("#histOne");
+var histTwoEl = document.querySelector("#histTwo");
+var histThreeEl = document.querySelector("#histThree");
+var histFourEl = document.querySelector("#histFour");
+var histFiveEl = document.querySelector("#histFive");
 var currentCity;
 var weatherTod;
+var todayWeather;
+var tomWeather;
+var tomTwoWeather;
+var searchHist = [];
 
 //===DATA====
 
 searchButEl.addEventListener("click", function () {
   searchCity(searchInputEl.value);
+  saveSearchData(searchInputEl.value);
 });
+
+function saveSearchData(data) {
+  searchHist[0] = data;
+  searchHist.push(JSON.parse(localStorage.getItem("searchHist")));
+  localStorage.setItem("searchHist", JSON.stringify(searchHist));
+}
+
+var getSearchHist = JSON.parse(localStorage.getItem("searchHist"));
+console.log(getSearchHist);
 
 let currentDay = dayjs().format("M/D/YY");
 todayDayEl.textContent = currentDay;
@@ -103,6 +128,31 @@ function getWeather(lat, lon) {
       var todayTemp = Math.round((data.main.temp - 273) * 1.8 + 32);
       var todayWind = data.wind.speed;
       var todayHum = data.main.humidity;
+      var todayWeather = data.weather[0].main;
+      console.log(todayWeather);
+
+      if (todayWeather === "Clouds") {
+        var img = document.createElement("img");
+        img.src = "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        img.height = "100";
+        img.width = "100";
+        todIconEl.appendChild(img);
+      } else if (todayWeather === "Rain") {
+        var img = document.createElement("img");
+        img.src = "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        img.height = "100";
+        img.width = "100";
+        todIconEl.appendChild(img);
+      } else if (todayWeather === "Snow") {
+        var img = document.createElement("img");
+        img.src = "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        img.height = "100";
+        img.width = "100";
+        todIconEl.appendChild(img);
+      } else {
+        todIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+      }
 
       todTempEl.textContent = todayTemp;
       todWindEl.textContent = todayWind;
@@ -138,8 +188,33 @@ function getForecast(lat, lon) {
           1.8 +
           32
       );
-      console.log(tomTemp);
+      // console.log(tomTemp);
       fiveDayEl.children[0].children[1].textContent = "Temp: " + tomTemp + "º";
+
+      var tomWeather = data.list[0].weather[0].main;
+      console.log(tomWeather);
+
+      if (tomWeather === "Clouds") {
+        tomIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomIconEl.width = "100";
+        tomIconEl.height = "100";
+      } else if (tomWeather === "Rain") {
+        tomIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomIconEl.width = "100";
+        tomIconEl.height = "100";
+      } else if (tomWeather === "Snow") {
+        tomIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomIconEl.width = "100";
+        tomIconEl.height = "100";
+      } else {
+        tomIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomIconEl.width = "100";
+        tomIconEl.height = "100";
+      }
 
       var tomTwoTemp = Math.round(
         ((data.list[7].main.feels_like +
@@ -155,9 +230,34 @@ function getForecast(lat, lon) {
           1.8 +
           32
       );
-      console.log(tomTwoTemp);
+      // console.log(tomTwoTemp);
       fiveDayEl.children[1].children[1].textContent =
         "Temp: " + tomTwoTemp + "º";
+
+      var tomTwoWeather = data.list[7].weather[0].main;
+      console.log(tomTwoWeather);
+
+      if (tomTwoWeather === "Clouds") {
+        tomTwoIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomTwoIconEl.width = "100";
+        tomTwoIconEl.height = "100";
+      } else if (tomTwoWeather === "Rain") {
+        tomTwoIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomTwoIconEl.width = "100";
+        tomTwoIconEl.height = "100";
+      } else if (tomTwoWeather === "Snow") {
+        tomTwoIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomTwoIconEl.width = "100";
+        tomTwoIconEl.height = "100";
+      } else {
+        tomTwoIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomTwoIconEl.width = "100";
+        tomTwoIconEl.height = "100";
+      }
 
       var tomThreeTemp = Math.round(
         ((data.list[15].main.feels_like +
@@ -173,9 +273,34 @@ function getForecast(lat, lon) {
           1.8 +
           32
       );
-      console.log(tomThreeTemp);
+      // console.log(tomThreeTemp);
       fiveDayEl.children[2].children[1].textContent =
         "Temp: " + tomThreeTemp + "º";
+
+      var tomThreeWeather = data.list[15].weather[0].main;
+      console.log(tomThreeWeather);
+
+      if (tomThreeWeather === "Clouds") {
+        tomThreeIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomThreeIconEl.width = "100";
+        tomThreeIconEl.height = "100";
+      } else if (tomThreeWeather === "Rain") {
+        tomThreeIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomThreeIconEl.width = "100";
+        tomThreeIconEl.height = "100";
+      } else if (tomTwoWeather === "Snow") {
+        tomThreeIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomThreeIconEl.width = "100";
+        tomThreeIconEl.height = "100";
+      } else {
+        tomThreeIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomThreeIconEl.width = "100";
+        tomThreeIconEl.height = "100";
+      }
 
       var tomFourTemp = Math.round(
         ((data.list[23].main.feels_like +
@@ -191,7 +316,35 @@ function getForecast(lat, lon) {
           1.8 +
           32
       );
-      console.log(tomFourTemp);
+      fiveDayEl.children[2].children[1].textContent =
+        "Temp: " + tomThreeTemp + "º";
+
+      var tomFourWeather = data.list[23].weather[0].main;
+      console.log(tomFourWeather);
+
+      if (tomFourWeather === "Clouds") {
+        tomFourIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomFourIconEl.width = "100";
+        tomFourIconEl.height = "100";
+      } else if (tomFourWeather === "Rain") {
+        tomFourIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomFourIconEl.width = "100";
+        tomFourIconEl.height = "100";
+      } else if (tomFourWeather === "Snow") {
+        tomFourIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomFourIconEl.width = "100";
+        tomFourIconEl.height = "100";
+      } else {
+        tomFourIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomFourIconEl.width = "100";
+        tomFourIconEl.height = "100";
+      }
+
+      // console.log(tomFourTemp);
       fiveDayEl.children[3].children[1].textContent =
         "Temp: " + tomFourTemp + "º";
 
@@ -209,7 +362,33 @@ function getForecast(lat, lon) {
           1.8 +
           32
       );
-      console.log(tomFiveTemp);
+
+      var tomFiveWeather = data.list[31].weather[0].main;
+      console.log(tomFiveWeather);
+
+      if (tomFiveWeather === "Clouds") {
+        tomFiveIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomFiveIconEl.width = "100";
+        tomFiveIconEl.height = "100";
+      } else if (tomFiveWeather === "Rain") {
+        tomFiveIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomFiveIconEl.width = "100";
+        tomFiveIconEl.height = "100";
+      } else if (tomFiveWeather === "Snow") {
+        tomFiveIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomFiveIconEl.width = "100";
+        tomFiveIconEl.height = "100";
+      } else {
+        tomFiveIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomFiveIconEl.width = "100";
+        tomFiveIconEl.height = "100";
+      }
+
+      // console.log(tomFiveTemp);
       fiveDayEl.children[4].children[1].textContent =
         "Temp: " + tomFiveTemp + "º";
 
@@ -223,7 +402,7 @@ function getForecast(lat, lon) {
           data.list[6].wind.speed) /
           7
       );
-      console.log(tomWind);
+      // console.log(tomWind);
       fiveDayEl.children[0].children[2].textContent =
         "Wind: " + tomWind + " MPH";
 
@@ -238,7 +417,7 @@ function getForecast(lat, lon) {
           data.list[14].wind.speed) /
           8
       );
-      console.log(tomTwoWind);
+      // console.log(tomTwoWind);
       fiveDayEl.children[1].children[2].textContent =
         "Wind: " + tomTwoWind + " MPH";
 
@@ -253,7 +432,7 @@ function getForecast(lat, lon) {
           data.list[22].wind.speed) /
           8
       );
-      console.log(tomThreeWind);
+      // console.log(tomThreeWind);
       fiveDayEl.children[2].children[2].textContent =
         "Wind: " + tomThreeWind + " MPH";
 
@@ -268,7 +447,7 @@ function getForecast(lat, lon) {
           data.list[30].wind.speed) /
           8
       );
-      console.log(tomFourWind);
+      // console.log(tomFourWind);
       fiveDayEl.children[3].children[2].textContent =
         "Wind: " + tomFourWind + " MPH";
 
@@ -283,7 +462,7 @@ function getForecast(lat, lon) {
           data.list[38].wind.speed) /
           8
       );
-      console.log(tomFiveWind);
+      // console.log(tomFiveWind);
       fiveDayEl.children[4].children[2].textContent =
         "Wind: " + tomFiveWind + " MPH";
 
@@ -297,7 +476,7 @@ function getForecast(lat, lon) {
           data.list[6].main.humidity) /
           7
       );
-      console.log(tomHum);
+      // console.log(tomHum);
       fiveDayEl.children[0].children[3].textContent =
         "Humidity: " + tomHum + "%";
 
@@ -312,7 +491,7 @@ function getForecast(lat, lon) {
           data.list[14].main.humidity) /
           8
       );
-      console.log(tomTwoHum);
+      // console.log(tomTwoHum);
       fiveDayEl.children[1].children[3].textContent =
         "Humidity: " + tomTwoHum + "%";
 
@@ -327,7 +506,7 @@ function getForecast(lat, lon) {
           data.list[22].main.humidity) /
           8
       );
-      console.log(tomThreeHum);
+      // console.log(tomThreeHum);
       fiveDayEl.children[2].children[3].textContent =
         "Humidity: " + tomThreeHum + "%";
 
@@ -342,7 +521,7 @@ function getForecast(lat, lon) {
           data.list[30].main.humidity) /
           8
       );
-      console.log(tomFourHum);
+      // console.log(tomFourHum);
       fiveDayEl.children[3].children[3].textContent =
         "Humidity: " + tomFourHum + "%";
 
@@ -357,7 +536,7 @@ function getForecast(lat, lon) {
           data.list[38].main.humidity) /
           8
       );
-      console.log(tomFiveHum);
+      // console.log(tomFiveHum);
       fiveDayEl.children[4].children[3].textContent =
         "Humidity: " + tomFiveHum + "%";
     });
@@ -369,3 +548,43 @@ function getForecast(lat, lon) {
 
 getWeather(lat, lon);
 getForecast(lat, lon);
+
+if (getSearchHist[0]) {
+  histOneEl.textContent = getSearchHist[0];
+  histOneEl.setAttribute = ("style", "display: block");
+  histOneEl.addEventListener("click", function () {
+    searchCity(getSearchHist[0]);
+  });
+}
+
+if (getSearchHist[1][0]) {
+  histTwoEl.textContent = getSearchHist[1][0];
+  histTwoEl.setAttribute = ("style", "display: block");
+  histTwoEl.addEventListener("click", function () {
+    searchCity(getSearchHist[1][0]);
+  });
+}
+
+if (getSearchHist[1][1][0]) {
+  histThreeEl.textContent = getSearchHist[1][1][0];
+  histThreeEl.setAttribute = ("style", "display: block");
+  histThreeEl.addEventListener("click", function () {
+    searchCity(getSearchHist[1][1][0]);
+  });
+}
+
+if (getSearchHist[1][1][1][0]) {
+  histFourEl.textContent = getSearchHist[1][1][1][0];
+  histFourEl.setAttribute = ("style", "display: block");
+  histFourEl.addEventListener("click", function () {
+    searchCity(getSearchHist[1][1][1][0]);
+  });
+}
+
+if (getSearchHist[1][1][1][1][0]) {
+  histFiveEl.textContent = getSearchHist[1][1][1][1][0];
+  histFiveEl.setAttribute = ("style", "display: block");
+  histFiveEl.addEventListener("click", function () {
+    searchCity(getSearchHist[1][1][1][1][0]);
+  });
+}

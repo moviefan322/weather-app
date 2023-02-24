@@ -48,6 +48,13 @@ p {
   border-radius: 20px;
 }
 
+.hist {
+  margin: 0 5em 1em 5em;
+  background-color: rgb(173, 230, 181);
+  border-radius: 20px;
+  display: none;
+}
+
 #today {
   order: 2;
   display: flex;

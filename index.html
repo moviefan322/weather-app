@@ -29,13 +29,20 @@
           <input type="text" name="" id="search" placeholder="San Diego" />
         </form>
         <button id="searchBut">Search</button>
-        <ul id="search-history"></ul>
+        <ul id="search-history">
+          <li><button id="histOne" class="hist">Undefined</button></li>
+          <li><button id="histTwo" class="hist">Undefined</button></li>
+          <li><button id="histThree" class="hist">Undefined</button></li>
+          <li><button id="histFour" class="hist">Undefined</button></li>
+          <li><button id="histFive" class="hist">Undefined</button></li>
+        </ul>
       </section>
       <main id="today">
         <h2><span id="city"></span> (<span id="todayDay"></span>)</h2>
         <p>Temp: <span id="todTemp"></span>ºF</p>
         <p>Wind: <span id="todWind"></span> MPH</p>
         <p>Humidity: <span id="todHum"></span>%</p>
+        <div id="todIcon"></div>
       </main>
     </div>
     <section id="fiveday">
@@ -44,30 +51,35 @@
         <p>Temp:</p>
         <p>Wind:</p>
         <p>Humidity:</p>
+        <img id="tomIcon" src="" alt="" />
       </div>
       <div id="tomTwo">
         <h4>2/23/23</h4>
         <p>Temp:</p>
         <p>Wind:</p>
         <p>Humidity:</p>
+        <img id="tomTwoIcon" src="" alt="" />
       </div>
       <div id="tomThree">
         <h4>2/24/23</h4>
         <p>Temp:</p>
         <p>Wind:</p>
         <p>Humidity:</p>
+        <img id="tomThreeIcon" src="" alt="" />
       </div>
       <div id="tomFour">
         <h4>2/25/23</h4>
         <p>Temp:</p>
         <p>Wind:</p>
         <p>Humidity:</p>
+        <img id="tomFourIcon" src="" alt="" />
       </div>
       <div id="tomFive">
         <h4>2/26/23</h4>
         <p>Temp:</p>
         <p>Wind:</p>
         <p>Humidity:</p>
+        <img id="tomFiveIcon" src="" alt="" />
       </div>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
