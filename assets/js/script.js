@@ -175,7 +175,7 @@ function renderSavedItems() {
 
   if (getSearchHist[0]) {
     histOneEl.textContent = getSearchHist[0];
-    histOneEl.setAttribute = ("style", "display: block");
+    document.getElementById("histOne").style.display = "block";
     histOneEl.addEventListener("click", function () {
       searchCity(getSearchHist[0]);
     });
@@ -183,7 +183,7 @@ function renderSavedItems() {
 
   if (getSearchHist[1]) {
     histTwoEl.textContent = getSearchHist[1];
-    histTwoEl.setAttribute = ("style", "display: block");
+    document.getElementById("histTwo").style.display = "block";
     histTwoEl.addEventListener("click", function () {
       searchCity(getSearchHist[1]);
     });
@@ -191,7 +191,7 @@ function renderSavedItems() {
 
   if (getSearchHist[2]) {
     histThreeEl.textContent = getSearchHist[2];
-    histThreeEl.setAttribute = ("style", "display: block");
+    document.getElementById("histThree").style.display = "block";
     histThreeEl.addEventListener("click", function () {
       searchCity(getSearchHist[2]);
     });
@@ -199,7 +199,7 @@ function renderSavedItems() {
 
   if (getSearchHist[3]) {
     histFourEl.textContent = getSearchHist[3];
-    histFourEl.setAttribute = ("style", "display: block");
+    document.getElementById("histFour").style.display = "block";
     histFourEl.addEventListener("click", function () {
       searchCity(getSearchHist[3]);
     });
@@ -207,7 +207,7 @@ function renderSavedItems() {
 
   if (getSearchHist[4]) {
     histFiveEl.textContent = getSearchHist[4];
-    histFiveEl.setAttribute = ("style", "display: block");
+    document.getElementById("histFive").style.display = "block";
     histFiveEl.addEventListener("click", function () {
       searchCity(getSearchHist[4]);
     });

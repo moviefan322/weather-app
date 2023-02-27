@@ -8,10 +8,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
+#header {
   background-color: purple;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: auto;
+  width: 176%;
   margin-bottom: 2em;
   align-content: center;
   border-bottom: 3px white dashed;
@@ -31,7 +32,7 @@ header h1 {
 
 #top-bar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
 }
 
@@ -47,10 +48,11 @@ p {
   flex-direction: column;
   text-align: center;
   background-color: gray;
-  width: 15%;
-  margin-left: 1.5em;
+  width: 100%;
+  margin-left: 9em;
   margin-top: 2em;
   padding-top: 0.5em;
+  margin-bottom: 3em;
   border: 3px rgb(255, 255, 255) dashed;
 }
 
@@ -61,10 +63,11 @@ p {
 }
 
 .hist {
-  margin: 0 5em 1em 5em;
+  margin: 0 5em 1em 4.5em;
   background-color: rgb(173, 230, 181);
   border-radius: 20px;
-  /* display: none; */
+  width: 11em;
+  display: none;
 }
 
 #today {
@@ -72,10 +75,10 @@ p {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 40%;
+  width: 150%;
   align-items: center;
   padding-top: 4em;
-  margin-left: 14em;
+  margin-left: 3em;
   background-color: lightskyblue;
   border: white dashed 3px;
 }
@@ -95,14 +98,143 @@ p {
   justify-content: center;
 }
 
-#fiveday div {
+#fiveday {
+  display; flex;
+  flex-direction: column;
   padding: 3em;
   margin: 2em;
-  background-color: lightblue;
+  margin-left: 11em;
+  width: 80%;
   text-align: left;
+  text-align: center;
+}
+
+#fiveday div { 
+  background-color: lightblue;
+  margin-bottom: 3em;
+  padding: 3em;
   border: white 3px dashed;
+}
+
+#tom{
+  margin-bottom: 100em;
 }
 
 #fiveday div h4 {
   margin-bottom: 2em;
+}
+
+@media (min-width: 1500px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: url("../icons/sky.jpeg");
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    background-color: purple;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    margin-bottom: 2em;
+    align-content: center;
+    border-bottom: 3px white dashed;
+    width: 100%;
+  }
+
+  header h1 {
+    width: 100%;
+    text-align: left;
+    margin-left: 24em;
+    color: rgb(235, 218, 218);
+    padding: 0.25em;
+  }
+
+  /* section {
+    background-color: gray;
+    width: 20%;
+    margin-left: 1em;
+  } */
+
+  #top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  section h3,
+  form,
+  p {
+    padding-bottom: 0.5em;
+  }
+
+  #search-tab {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: gray;
+    width: 15%;
+    margin-left: 1.5em;
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border: 3px rgb(255, 255, 255) dashed;
+  }
+
+  #searchBut {
+    margin: 0 5em 1em 5em;
+    background-color: lightblue;
+    border-radius: 20px;
+  }
+
+  .hist {
+    margin: 0 5em 1em 3em;
+    background-color: rgb(173, 230, 181);
+    border-radius: 20px;
+    width: 11em;
+    display: none;
+  }
+
+  #today {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+    padding-top: 4em;
+    margin-left: 20em;
+    background-color: lightskyblue;
+    border: white dashed 3px;
+  }
+
+  #todIcon {
+    height: 150px;
+    width: 150px;
+  }
+
+  #today h2 {
+    padding-bottom: 1em;
+  }
+
+  #fiveday {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #fiveday div {
+    padding: 3em;
+    margin: 2em;
+    background-color: lightblue;
+    text-align: left;
+    border: white 3px dashed;
+  }
+
+  #fiveday div h4 {
+    margin-bottom: 2em;
+  }
 }
