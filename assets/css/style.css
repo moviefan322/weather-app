@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url("/Users/heimakte/bootcamp/weather-app/assets/icons/sky.jpeg");
+  background-image: url("../icons/sky.jpeg");
   background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
 }
