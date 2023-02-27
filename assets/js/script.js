@@ -34,13 +34,28 @@ var searchHist = [];
 searchButEl.addEventListener("click", function () {
   searchCity(searchInputEl.value);
   saveSearchData(searchInputEl.value);
+  renderSavedItems();
 });
 
 function saveSearchData(data) {
-  searchHist[0] = data;
-  searchHist.push(JSON.parse(localStorage.getItem("searchHist")));
+  var searchHist = localStorage.getItem("searchHist");
+
+  if (!searchHist) {
+    searchHist = [];
+  } else {
+    searchHist = JSON.parse(searchHist);
+  }
+
+  searchHist.unshift(data);
+
   localStorage.setItem("searchHist", JSON.stringify(searchHist));
 }
+
+//   if (!searchHist)
+//   searchHist[0] = data;
+//   searchHist.push(JSON.parse(localStorage.getItem("searchHist")));
+//   localStorage.setItem("searchHist", JSON.stringify(searchHist));
+// }
 
 var getSearchHist = JSON.parse(localStorage.getItem("searchHist"));
 console.log(getSearchHist);
@@ -132,23 +147,21 @@ function getWeather(lat, lon) {
       console.log(todayWeather);
 
       if (todayWeather === "Clouds") {
-        var img = document.createElement("img");
-        img.src = "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
-        img.height = "100";
-        img.width = "100";
-        todIconEl.appendChild(img);
+        todIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        todIconEl.width = "100";
+        todIconEl.height = "100";
       } else if (todayWeather === "Rain") {
-        var img = document.createElement("img");
-        img.src = "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
-        img.height = "100";
-        img.width = "100";
+        todIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        todIconEl.width = "100";
+        todIconEl.height = "100";
         todIconEl.appendChild(img);
       } else if (todayWeather === "Snow") {
-        var img = document.createElement("img");
-        img.src = "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
-        img.height = "100";
-        img.width = "100";
-        todIconEl.appendChild(img);
+        todIconEl.src =
+          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        todIconEl.width = "100";
+        todIconEl.height = "100";
       } else {
         todIconEl.src =
           "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
@@ -159,6 +172,50 @@ function getWeather(lat, lon) {
       todHumEl.textContent = todayHum;
       cityEl.textContent = here;
     });
+}
+
+function renderSavedItems() {
+  getSearchHist = JSON.parse(localStorage.getItem("searchHist"));
+
+  if (getSearchHist[0]) {
+    histOneEl.textContent = getSearchHist[0];
+    histOneEl.setAttribute = ("style", "display: block");
+    histOneEl.addEventListener("click", function () {
+      searchCity(getSearchHist[0]);
+    });
+  }
+
+  if (getSearchHist[1]) {
+    histTwoEl.textContent = getSearchHist[1];
+    histTwoEl.setAttribute = ("style", "display: block");
+    histTwoEl.addEventListener("click", function () {
+      searchCity(getSearchHist[1]);
+    });
+  }
+
+  if (getSearchHist[2]) {
+    histThreeEl.textContent = getSearchHist[2];
+    histThreeEl.setAttribute = ("style", "display: block");
+    histThreeEl.addEventListener("click", function () {
+      searchCity(getSearchHist[2]);
+    });
+  }
+
+  if (getSearchHist[3]) {
+    histFourEl.textContent = getSearchHist[3];
+    histFourEl.setAttribute = ("style", "display: block");
+    histFourEl.addEventListener("click", function () {
+      searchCity(getSearchHist[3]);
+    });
+  }
+
+  if (getSearchHist[4]) {
+    histFiveEl.textContent = getSearchHist[4];
+    histFiveEl.setAttribute = ("style", "display: block");
+    histFiveEl.addEventListener("click", function () {
+      searchCity(getSearchHist[4]);
+    });
+  }
 }
 
 function getForecast(lat, lon) {
@@ -542,49 +599,17 @@ function getForecast(lat, lon) {
     });
 }
 
+function makeAndReturnWeatherCard(someArray) {
+  // run a for loop, looping over the length of your daily forecast array
+  // in each iteration, you will create a div, a span, etc
+  // then assign content or text to each one of those elements
+  // then append those elements to an existing element in your document, i.e. document.getElementById('#someId').appendChild()
+}
+
 //===USER INTERACTIONS====
 
 //===INITIALIZATIONS====
 
 getWeather(lat, lon);
 getForecast(lat, lon);
-
-if (getSearchHist[0]) {
-  histOneEl.textContent = getSearchHist[0];
-  histOneEl.setAttribute = ("style", "display: block");
-  histOneEl.addEventListener("click", function () {
-    searchCity(getSearchHist[0]);
-  });
-}
-
-if (getSearchHist[1][0]) {
-  histTwoEl.textContent = getSearchHist[1][0];
-  histTwoEl.setAttribute = ("style", "display: block");
-  histTwoEl.addEventListener("click", function () {
-    searchCity(getSearchHist[1][0]);
-  });
-}
-
-if (getSearchHist[1][1][0]) {
-  histThreeEl.textContent = getSearchHist[1][1][0];
-  histThreeEl.setAttribute = ("style", "display: block");
-  histThreeEl.addEventListener("click", function () {
-    searchCity(getSearchHist[1][1][0]);
-  });
-}
-
-if (getSearchHist[1][1][1][0]) {
-  histFourEl.textContent = getSearchHist[1][1][1][0];
-  histFourEl.setAttribute = ("style", "display: block");
-  histFourEl.addEventListener("click", function () {
-    searchCity(getSearchHist[1][1][1][0]);
-  });
-}
-
-if (getSearchHist[1][1][1][1][0]) {
-  histFiveEl.textContent = getSearchHist[1][1][1][1][0];
-  histFiveEl.setAttribute = ("style", "display: block");
-  histFiveEl.addEventListener("click", function () {
-    searchCity(getSearchHist[1][1][1][1][0]);
-  });
-}
+renderSavedItems();
