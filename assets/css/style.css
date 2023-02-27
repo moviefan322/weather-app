@@ -80,6 +80,11 @@ p {
   border: white dashed 3px;
 }
 
+#todIcon {
+  height: 150px;
+  width: 150px;
+}
+
 #today h2 {
   padding-bottom: 1em;
 }
