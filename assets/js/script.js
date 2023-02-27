@@ -147,24 +147,20 @@ function getWeather(lat, lon) {
       console.log(todayWeather);
 
       if (todayWeather === "Clouds") {
-        todIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        todIconEl.src = "../assets/icons/cloud.png";
         todIconEl.width = "100";
         todIconEl.height = "100";
       } else if (todayWeather === "Rain") {
-        todIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        todIconEl.src = "../assets/icons/rain.png";
         todIconEl.width = "100";
         todIconEl.height = "100";
         todIconEl.appendChild(img);
       } else if (todayWeather === "Snow") {
-        todIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        todIconEl.src = "../assets/icons/snow.png";
         todIconEl.width = "100";
         todIconEl.height = "100";
       } else {
-        todIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        todIconEl.src = "../assets/icons/sun.png";
       }
 
       todTempEl.textContent = todayTemp;
@@ -252,23 +248,19 @@ function getForecast(lat, lon) {
       console.log(tomWeather);
 
       if (tomWeather === "Clouds") {
-        tomIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomIconEl.src = "../assets/icons/cloud.png";
         tomIconEl.width = "100";
         tomIconEl.height = "100";
       } else if (tomWeather === "Rain") {
-        tomIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomIconEl.src = "../assets/icons/rain.png";
         tomIconEl.width = "100";
         tomIconEl.height = "100";
       } else if (tomWeather === "Snow") {
-        tomIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomIconEl.src = "../assets/icons/snow.png";
         tomIconEl.width = "100";
         tomIconEl.height = "100";
       } else {
-        tomIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomIconEl.src = "../assets/icons/sun.png";
         tomIconEl.width = "100";
         tomIconEl.height = "100";
       }
@@ -295,23 +287,19 @@ function getForecast(lat, lon) {
       console.log(tomTwoWeather);
 
       if (tomTwoWeather === "Clouds") {
-        tomTwoIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomTwoIconEl.src = "../assets/icons/cloud.png";
         tomTwoIconEl.width = "100";
         tomTwoIconEl.height = "100";
       } else if (tomTwoWeather === "Rain") {
-        tomTwoIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomTwoIconEl.src = "../assets/icons/rain.png";
         tomTwoIconEl.width = "100";
         tomTwoIconEl.height = "100";
       } else if (tomTwoWeather === "Snow") {
-        tomTwoIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomTwoIconEl.src = "../assets/icons/snow.png";
         tomTwoIconEl.width = "100";
         tomTwoIconEl.height = "100";
       } else {
-        tomTwoIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomTwoIconEl.src = "../assets/icons/sun.png";
         tomTwoIconEl.width = "100";
         tomTwoIconEl.height = "100";
       }
@@ -338,23 +326,19 @@ function getForecast(lat, lon) {
       console.log(tomThreeWeather);
 
       if (tomThreeWeather === "Clouds") {
-        tomThreeIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomThreeIconEl.src = "../assets/icons/cloud.png";
         tomThreeIconEl.width = "100";
         tomThreeIconEl.height = "100";
       } else if (tomThreeWeather === "Rain") {
-        tomThreeIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomThreeIconEl.src = "../assets/icons/rain.png";
         tomThreeIconEl.width = "100";
         tomThreeIconEl.height = "100";
       } else if (tomTwoWeather === "Snow") {
-        tomThreeIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomThreeIconEl.src = "../assets/icons/snow.png";
         tomThreeIconEl.width = "100";
         tomThreeIconEl.height = "100";
       } else {
-        tomThreeIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomThreeIconEl.src = "../assets/icons/sun.png";
         tomThreeIconEl.width = "100";
         tomThreeIconEl.height = "100";
       }
@@ -380,23 +364,19 @@ function getForecast(lat, lon) {
       console.log(tomFourWeather);
 
       if (tomFourWeather === "Clouds") {
-        tomFourIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomFourIconEl.src = "../assets/icons/cloud.png";
         tomFourIconEl.width = "100";
         tomFourIconEl.height = "100";
       } else if (tomFourWeather === "Rain") {
-        tomFourIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomFourIconEl.src = "../assets/icons/rain.png";
         tomFourIconEl.width = "100";
         tomFourIconEl.height = "100";
       } else if (tomFourWeather === "Snow") {
-        tomFourIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomFourIconEl.src = "../assets/icons/snow.png";
         tomFourIconEl.width = "100";
         tomFourIconEl.height = "100";
       } else {
-        tomFourIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomFourIconEl.src = "../assets/icons/sun.png";
         tomFourIconEl.width = "100";
         tomFourIconEl.height = "100";
       }
@@ -424,23 +404,19 @@ function getForecast(lat, lon) {
       console.log(tomFiveWeather);
 
       if (tomFiveWeather === "Clouds") {
-        tomFiveIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/cloud.png";
+        tomFiveIconEl.src = "../assets/icons/cloud.png";
         tomFiveIconEl.width = "100";
         tomFiveIconEl.height = "100";
       } else if (tomFiveWeather === "Rain") {
-        tomFiveIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/rain.png";
+        tomFiveIconEl.src = "../assets/icons/rain.png";
         tomFiveIconEl.width = "100";
         tomFiveIconEl.height = "100";
       } else if (tomFiveWeather === "Snow") {
-        tomFiveIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/snow.png";
+        tomFiveIconEl.src = "../assets/icons/snow.png";
         tomFiveIconEl.width = "100";
         tomFiveIconEl.height = "100";
       } else {
-        tomFiveIconEl.src =
-          "/Users/heimakte/bootcamp/weather-app/assets/icons/sun.png";
+        tomFiveIconEl.src = "../assets/icons/sun.png";
         tomFiveIconEl.width = "100";
         tomFiveIconEl.height = "100";
       }
