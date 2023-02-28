@@ -145,23 +145,9 @@ function getWeather(lat, lon) {
       var todayHum = data.main.humidity;
       var todayWeather = data.weather[0].main;
       console.log(todayWeather);
-
-      if (todayWeather === "Clouds") {
-        todIconEl.src = "assets/icons/cloud.png";
-        todIconEl.width = "100";
-        todIconEl.height = "100";
-      } else if (todayWeather === "Rain") {
-        todIconEl.src = "assets/icons/rain.png";
-        todIconEl.width = "100";
-        todIconEl.height = "100";
-        todIconEl.appendChild(img);
-      } else if (todayWeather === "Snow") {
-        todIconEl.src = "assets/icons/snow.png";
-        todIconEl.width = "100";
-        todIconEl.height = "100";
-      } else {
-        todIconEl.src = "assets/icons/sun.png";
-      }
+      todIconEl.src = "assets/icons/" + todayWeather + ".png";
+      todIconEl.width = "100";
+      todIconEl.height = "100";
 
       todTempEl.textContent = todayTemp;
       todWindEl.textContent = todayWind;
@@ -246,24 +232,9 @@ function getForecast(lat, lon) {
 
       var tomWeather = data.list[0].weather[0].main;
       console.log(tomWeather);
-
-      if (tomWeather === "Clouds") {
-        tomIconEl.src = "assets/icons/cloud.png";
-        tomIconEl.width = "100";
-        tomIconEl.height = "100";
-      } else if (tomWeather === "Rain") {
-        tomIconEl.src = "assets/icons/rain.png";
-        tomIconEl.width = "100";
-        tomIconEl.height = "100";
-      } else if (tomWeather === "Snow") {
-        tomIconEl.src = "assets/icons/snow.png";
-        tomIconEl.width = "100";
-        tomIconEl.height = "100";
-      } else {
-        tomIconEl.src = "assets/icons/sun.png";
-        tomIconEl.width = "100";
-        tomIconEl.height = "100";
-      }
+      tomIconEl.src = "assets/icons/" + tomWeather + ".png";
+      tomIconEl.width = "100";
+      tomIconEl.height = "100";
 
       var tomTwoTemp = Math.round(
         ((data.list[7].main.feels_like +
@@ -285,24 +256,9 @@ function getForecast(lat, lon) {
 
       var tomTwoWeather = data.list[7].weather[0].main;
       console.log(tomTwoWeather);
-
-      if (tomTwoWeather === "Clouds") {
-        tomTwoIconEl.src = "assets/icons/cloud.png";
-        tomTwoIconEl.width = "100";
-        tomTwoIconEl.height = "100";
-      } else if (tomTwoWeather === "Rain") {
-        tomTwoIconEl.src = "assets/icons/rain.png";
-        tomTwoIconEl.width = "100";
-        tomTwoIconEl.height = "100";
-      } else if (tomTwoWeather === "Snow") {
-        tomTwoIconEl.src = "assets/icons/snow.png";
-        tomTwoIconEl.width = "100";
-        tomTwoIconEl.height = "100";
-      } else {
-        tomTwoIconEl.src = "assets/icons/sun.png";
-        tomTwoIconEl.width = "100";
-        tomTwoIconEl.height = "100";
-      }
+      tomTwoIconEl.src = "assets/icons/" + tomTwoWeather + ".png";
+      tomTwoIconEl.width = "100";
+      tomTwoIconEl.height = "100";
 
       var tomThreeTemp = Math.round(
         ((data.list[15].main.feels_like +
@@ -324,24 +280,9 @@ function getForecast(lat, lon) {
 
       var tomThreeWeather = data.list[15].weather[0].main;
       console.log(tomThreeWeather);
-
-      if (tomThreeWeather === "Clouds") {
-        tomThreeIconEl.src = "assets/icons/cloud.png";
-        tomThreeIconEl.width = "100";
-        tomThreeIconEl.height = "100";
-      } else if (tomThreeWeather === "Rain") {
-        tomThreeIconEl.src = "assets/icons/rain.png";
-        tomThreeIconEl.width = "100";
-        tomThreeIconEl.height = "100";
-      } else if (tomTwoWeather === "Snow") {
-        tomThreeIconEl.src = "assets/icons/snow.png";
-        tomThreeIconEl.width = "100";
-        tomThreeIconEl.height = "100";
-      } else {
-        tomThreeIconEl.src = "assets/icons/sun.png";
-        tomThreeIconEl.width = "100";
-        tomThreeIconEl.height = "100";
-      }
+      tomThreeIconEl.src = "assets/icons/" + tomThreeWeather + ".png";
+      tomThreeIconEl.width = "100";
+      tomThreeIconEl.height = "100";
 
       var tomFourTemp = Math.round(
         ((data.list[23].main.feels_like +
@@ -362,24 +303,9 @@ function getForecast(lat, lon) {
 
       var tomFourWeather = data.list[23].weather[0].main;
       console.log(tomFourWeather);
-
-      if (tomFourWeather === "Clouds") {
-        tomFourIconEl.src = "assets/icons/cloud.png";
-        tomFourIconEl.width = "100";
-        tomFourIconEl.height = "100";
-      } else if (tomFourWeather === "Rain") {
-        tomFourIconEl.src = "assets/icons/rain.png";
-        tomFourIconEl.width = "100";
-        tomFourIconEl.height = "100";
-      } else if (tomFourWeather === "Snow") {
-        tomFourIconEl.src = "assets/icons/snow.png";
-        tomFourIconEl.width = "100";
-        tomFourIconEl.height = "100";
-      } else {
-        tomFourIconEl.src = "assets/icons/sun.png";
-        tomFourIconEl.width = "100";
-        tomFourIconEl.height = "100";
-      }
+      tomFourIconEl.src = "assets/icons/" + tomFourWeather + ".png";
+      tomFourIconEl.width = "100";
+      tomFourIconEl.height = "100";
 
       // console.log(tomFourTemp);
       fiveDayEl.children[3].children[1].textContent =
@@ -402,24 +328,9 @@ function getForecast(lat, lon) {
 
       var tomFiveWeather = data.list[31].weather[0].main;
       console.log(tomFiveWeather);
-
-      if (tomFiveWeather === "Clouds") {
-        tomFiveIconEl.src = "assets/icons/cloud.png";
-        tomFiveIconEl.width = "100";
-        tomFiveIconEl.height = "100";
-      } else if (tomFiveWeather === "Rain") {
-        tomFiveIconEl.src = "assets/icons/rain.png";
-        tomFiveIconEl.width = "100";
-        tomFiveIconEl.height = "100";
-      } else if (tomFiveWeather === "Snow") {
-        tomFiveIconEl.src = "assets/icons/snow.png";
-        tomFiveIconEl.width = "100";
-        tomFiveIconEl.height = "100";
-      } else {
-        tomFiveIconEl.src = "assets/icons/sun.png";
-        tomFiveIconEl.width = "100";
-        tomFiveIconEl.height = "100";
-      }
+      tomFiveIconEl.src = "assets/icons/" + tomFiveWeather + ".png";
+      tomFiveIconEl.width = "100";
+      tomFiveIconEl.height = "100";
 
       // console.log(tomFiveTemp);
       fiveDayEl.children[4].children[1].textContent =
