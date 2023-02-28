@@ -63,39 +63,17 @@ console.log(getSearchHist);
 let currentDay = dayjs().format("M/D/YY");
 todayDayEl.textContent = currentDay;
 
-let tomorrowDayString = dayjs().format("D");
-let tomorrowDayInt = parseInt(tomorrowDayString) + 1;
-let tomorrow = dayjs().format("M/" + tomorrowDayInt + "/YY");
-console.log(tomorrow);
+const a = dayjs();
+const tomorrow = a.add(1, "day").format("M/D/YY");
+const tomorrowTwo = a.add(2, "day").format("M/D/YY");
+const tomorrowThree = a.add(3, "day").format("M/D/YY");
+const tomorrowFour = a.add(4, "day").format("M/D/YY");
+const tomorrowFive = a.add(5, "day").format("M/D/YY");
 
 tomEl.children[0].textContent = tomorrow;
-
-let tomorrowTwoString = dayjs().format("D");
-let tomorrowTwoInt = parseInt(tomorrowTwoString) + 2;
-let tomorrowTwo = dayjs().format("M/" + tomorrowTwoInt + "/YY");
-console.log(tomorrowTwo);
-
 fiveDayEl.children[1].children[0].textContent = tomorrowTwo;
-
-let tomorrowThreeString = dayjs().format("D");
-let tomorrowThreeInt = parseInt(tomorrowTwoString) + 3;
-let tomorrowThree = dayjs().format("M/" + tomorrowThreeInt + "/YY");
-console.log(tomorrowThree);
-
 fiveDayEl.children[2].children[0].textContent = tomorrowThree;
-
-let tomorrowFourString = dayjs().format("D");
-let tomorrowFourInt = parseInt(tomorrowFourString) + 4;
-let tomorrowFour = dayjs().format("M/" + tomorrowFourInt + "/YY");
-console.log(tomorrowFour);
-
 fiveDayEl.children[3].children[0].textContent = tomorrowFour;
-
-let tomorrowFiveString = dayjs().format("D");
-let tomorrowFiveInt = parseInt(tomorrowTwoString) + 5;
-let tomorrowFive = dayjs().format("M/" + tomorrowFiveInt + "/YY");
-console.log(tomorrowFive);
-
 fiveDayEl.children[4].children[0].textContent = tomorrowFive;
 
 //===FUNCTIONS====
