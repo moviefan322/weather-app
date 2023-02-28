@@ -12,7 +12,7 @@ body {
   background-color: purple;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: auto;
-  width: 176%;
+  width: 100%;
   margin-bottom: 2em;
   align-content: center;
   border-bottom: 3px white dashed;
@@ -48,9 +48,8 @@ p {
   flex-direction: column;
   text-align: center;
   background-color: gray;
-  width: 100%;
-  margin-left: 9em;
-  margin-top: 2em;
+  width: 80%;
+  margin: auto;
   padding-top: 0.5em;
   margin-bottom: 3em;
   border: 3px rgb(255, 255, 255) dashed;
@@ -63,7 +62,7 @@ p {
 }
 
 .hist {
-  margin: 0 5em 1em 4.5em;
+  margin: 0 5em 1em 2.7em;
   background-color: rgb(173, 230, 181);
   border-radius: 20px;
   width: 11em;
@@ -75,10 +74,10 @@ p {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 150%;
+  width: 90%;
   align-items: center;
   padding-top: 4em;
-  margin-left: 3em;
+  margin: auto;
   background-color: lightskyblue;
   border: white dashed 3px;
 }
@@ -99,24 +98,23 @@ p {
 }
 
 #fiveday {
-  display; flex;
+  display: flex;
   flex-direction: column;
   padding: 3em;
-  margin: 2em;
-  margin-left: 11em;
+  margin: auto;
   width: 80%;
   text-align: left;
   text-align: center;
 }
 
-#fiveday div { 
+#fiveday div {
   background-color: lightblue;
   margin-bottom: 3em;
   padding: 3em;
   border: white 3px dashed;
 }
 
-#tom{
+#tom {
   margin-bottom: 100em;
 }
 
@@ -204,9 +202,9 @@ p {
     flex-wrap: wrap;
     flex-direction: column;
     width: 40%;
-    align-items: center;
+    margin-left: -22em;
+    align-items: left;
     padding-top: 4em;
-    margin-left: 20em;
     background-color: lightskyblue;
     border: white dashed 3px;
   }
