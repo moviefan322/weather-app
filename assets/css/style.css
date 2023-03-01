@@ -69,6 +69,10 @@ p {
   display: none;
 }
 
+#search-history {
+  justify-content: center;
+}
+
 #today {
   order: 2;
   display: flex;
@@ -145,8 +149,7 @@ p {
 
   header h1 {
     width: 100%;
-    text-align: left;
-    margin-left: 24em;
+    text-align: center;
     color: rgb(235, 218, 218);
     padding: 0.25em;
   }
@@ -183,17 +186,25 @@ p {
   }
 
   #searchBut {
-    margin: 0 5em 1em 5em;
+    margin: 5%
+    /* margin-left: -100%; */
     background-color: lightblue;
     border-radius: 20px;
+    width: 70%;
+    align-self: center;
   }
 
   .hist {
-    margin: 0 5em 1em 3em;
+    margin: 5%;
     background-color: rgb(173, 230, 181);
     border-radius: 20px;
-    width: 11em;
+    width: 70%;
+    align-self: center;
     display: none;
+  }
+
+  #search-history {
+    justify-content: center;
   }
 
   #today {
@@ -202,7 +213,7 @@ p {
     flex-wrap: wrap;
     flex-direction: column;
     width: 40%;
-    margin-left: -22em;
+    margin-left: -20%;
     align-items: left;
     padding-top: 4em;
     background-color: lightskyblue;
@@ -228,7 +239,7 @@ p {
     padding: 3em;
     margin: 2em;
     background-color: lightblue;
-    text-align: left;
+    text-align: center;
     border: white 3px dashed;
   }
 
