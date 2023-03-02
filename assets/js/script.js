@@ -29,9 +29,71 @@ var tomWeather;
 var tomTwoWeather;
 var searchHist = [];
 
+//SANDBOX
+
+// const suggestionsPanel = document.getElementById("suggestions");
+// let suggestions = [];
+
+// searchInputEl.addEventListener("input", function () {
+//   const inputValue = searchInputEl.value;
+
+//   // Call the OpenCage Geocoding API to get suggestions based on the input value
+//   fetch(
+//     `https://api.opencagedata.com/geocode/v1/json?q=${inputValue}&key=8d472c35cf19402f9de23910b631e2d5&limit=5`
+//   )
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const { results } = data;
+
+//       // Save the suggestions to the suggestions array
+//       suggestions = results.map((result) => result.formatted);
+
+//       // Render the suggestions in the suggestions panel
+//       renderSuggestions();
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// });
+
+// function renderSuggestions() {
+//   // Clear the existing suggestions from the panel
+//   while (suggestionsPanel.firstChild) {
+//     suggestionsPanel.removeChild(suggestionsPanel.firstChild);
+//   }
+
+//   // Render the new suggestions in the panel
+//   suggestions.forEach((suggestion) => {
+//     const suggestionElement = document.createElement("div");
+//     suggestionElement.classList.add("suggestion");
+//     suggestionElement.textContent = suggestion;
+//     suggestionElement.addEventListener("click", function () {
+//       // Set the search input value to the clicked suggestion
+//       searchInput.value = suggestion;
+
+//       // Clear the suggestions
+//       suggestions = [];
+//       suggestionsPanel.innerHTML = "";
+//     });
+//     suggestionsPanel.appendChild(suggestionElement);
+//   });
+// }
+
+// // Hide the suggestions panel when the user clicks outside of it
+// document.addEventListener("click", function (event) {
+//   if (
+//     !event.target.matches("#search") &&
+//     !event.target.matches(".suggestion")
+//   ) {
+//     suggestions = [];
+//     suggestionsPanel.innerHTML = "";
+//   }
+// });
+
 //===DATA====
 
 searchButEl.addEventListener("click", function () {
+  preventDefault();
   searchCity(searchInputEl.value);
   saveSearchData(searchInputEl.value);
   renderSavedItems();
